@@ -53,7 +53,7 @@ export const VerificationEmail = ({ role = "Advertiser", otp = "123456" }) => {
             <div style={cardBox}>
               <h1 style={title}>Welcome to Adgeist!</h1>
               <h3 style={subtitle}>
-                To complete your email verification, use the code below:
+               To complete password reset, please use the verification code below.
               </h3>
 
               <div>

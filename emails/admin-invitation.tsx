@@ -9,12 +9,12 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-export const RejectionEmail = ({
-  role = "Ad Manager",
-  removedBy = "Monika ",
-  effectiveOn = "Jan 12, 2025",
-  brandName = "AdsProTech pvt",
-  logo = "https://d2cfeg6k9cklz9.cloudfront.net/mail-template-icons/apt.png",
+export const AdminInvitationEmail = ({
+  role = "Admin",
+  invitedBy = "Monika ",
+  sentOn = "Jan 12, 2025",
+  source = "cdcd",
+  message = "dfeskjnfj felf efpofeipo fopeigk fpoekpki fpoekfpok ofkpeo pfokeo okfoekp "
 }) => {
   return (
     <Html>
@@ -40,7 +40,7 @@ export const RejectionEmail = ({
                     />
                   </td>
                   <td style={{ textAlign: "center" }}>
-                    <div style={advertiserBox}>Advertiser</div>
+                    <div style={advertiserBox}>Admin</div>
                   </td>
                 </tr>
               </table>
@@ -54,66 +54,53 @@ export const RejectionEmail = ({
           <Section style={box1}>
             <Section style={box2}>
               <Img
-                src="https://d2cfeg6k9cklz9.cloudfront.net/mail-template-icons/rejection.png"
+                src="https://d2cfeg6k9cklz9.cloudfront.net/mail-template-icons/invitation.png"
                 alt="invitation"
                 width="100"
                 height="100"
                 style={img1}
               />
               <Text style={title1}>
-                You no longer have access to the role of {" "}
-                <span style={title1Text}>{role}.</span>
+                You are invited to join as an{" "}
+                <span style={title1Text}>{role}</span>
               </Text>
-              <Section style={{ textAlign: "center", marginTop: "-0.6rem" }}>
-                <table
-                  align="center"
-                  cellPadding="0"
-                  cellSpacing="0"
-                  role="presentation"
-                  style={{ margin: "0.4rem auto 0rem auto" }}
-                >
-                  <tr>
-                    <td style={{color: "black", fontSize: "0.7rem"}}>At</td>
-                    <td>
-                      <Img
-                        src={logo}
-                        alt="apt"
-                        width="24"
-                        height="22"
-                        style={{ verticalAlign: "middle", margin: "0 8px" }}
-                      />
-                    </td>
-                    <td style={{color: "black", fontSize: "0.7rem"}}>{brandName}.</td>
-                  </tr>
-                </table>
-              </Section>
 
               <Section style={tableSection}>
                 <table style={table}>
                   <thead>
                     <tr>
-                      <th style={{...th, width: "115px"}}>Detail</th>
+                      <th style={{...th, width: "95px"}}>Detail</th>
                       <th style={th}>Information</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td style={tdTitle}>Removed by</td>
-                      <td style={td}>{removedBy}</td>
+                      <td style={tdTitle}>Invited by</td>
+                      <td style={td}>{invitedBy}</td>
                     </tr>
                     <tr>
                       <td style={tdTitle}>Role</td>
                       <td style={td}>{role}</td>
                     </tr>
                     <tr>
-                      <td style={tdTitle}>Effective on</td>
-                      <td style={td}>{effectiveOn}</td>
+                      <td style={tdTitle}>Sent on</td>
+                      <td style={td}>{sentOn}</td>
+                    </tr>
+                     <tr>
+                      <td style={tdTitle}>Message</td>
+                      <td style={{...td, lineHeight: "1rem"}}>{message}</td>
                     </tr>
                   </tbody>
                 </table>
               </Section>
 
-              <div style={{...content1, marginBottom: "14px"}}>If you think this was a mistake, please contact your team owner or reach out to us.</div>
+              <div style={buttonWrapper}>
+                <a href={source} style={buttonStyle}>
+                  Accept Invite
+                </a>
+              </div>
+
+              <div style={{...content1, marginBottom: "10px"}}>This invite link will expire in 7 days. You'll need to log in to accept this invite.</div>
             </Section>
           </Section>
 
@@ -141,7 +128,7 @@ export const RejectionEmail = ({
   );
 };
 
-export default RejectionEmail;
+export default AdminInvitationEmail;
 
 const body: React.CSSProperties = {
  fontFamily: `'Lucida Console', 'Courier New', monospace`,
@@ -198,10 +185,10 @@ const box1: React.CSSProperties = {
 };
 
 const box2: React.CSSProperties = {
+  justifyContent: "center",
+  width: "100%",
   border: "1px solid #B1B1B1",
   borderRadius: "8px",
-  justifyContent: "center",
-  width: "100%"
 };
 
 const title1: React.CSSProperties = {
@@ -221,7 +208,7 @@ const title1Text: React.CSSProperties = {
 const content1: React.CSSProperties = {
  width: "100%",
   maxWidth: "330px", // simulate 60% on desktop
-  margin: "0.5rem auto",
+  margin: "0 auto",
   fontSize: "0.73rem",
   textAlign: "center",
   color: "#000",
@@ -229,13 +216,13 @@ const content1: React.CSSProperties = {
 };
 
 const tableSection: React.CSSProperties = {
-  marginTop: '0.8rem',
-  marginBottom: "0.9rem"
+  padding: "1rem",
+    marginTop: "-3px"
 };
 
 const table: React.CSSProperties = {
   borderCollapse: "collapse",
-  width: "80%",
+  width: "90%",
   margin: "0 auto 0 auto"
 };
 
@@ -274,6 +261,31 @@ const img1: React.CSSProperties = {
   height: "132px",
   display: "block",
   margin: "0 auto",
+};
+
+// Button container style
+const buttonWrapper: React.CSSProperties = {
+  textAlign: "center",
+};
+
+// Button style
+const buttonStyle: React.CSSProperties = {
+  backgroundColor: "#000000",
+  width: "150px",
+  height: "30px",
+  color: "#FFFFFF",
+  fontWeight: 700,
+  fontSize: "0.82rem",
+  letterSpacing: "0.025em",
+  textTransform: "uppercase",
+  textAlign: "center",
+  alignItems: "center",
+  display: "inline-block",
+  lineHeight: "30px",
+  textDecoration: "none",
+  borderRadius: "6px",
+  marginBottom: "12px",
+  marginTop: "-3px"
 };
 
 const footerText1: React.CSSProperties = {
