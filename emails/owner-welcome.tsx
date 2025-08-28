@@ -1,0 +1,220 @@
+import {
+  Body,
+  Container,
+  Head,
+  Html,
+  Img,
+  Section,
+} from "@react-email/components";
+
+export const OwnerWelcome = ({
+  firstName = "name",
+  url = "fnkjenfkne",
+  companyName = "companyName"
+}) => {
+  return (
+    <Html>
+      <Head />
+      <Body style={body}>
+        <Container style={container}>
+          <Section>
+            <Section style={{ textAlign: "center" }}>
+              <table
+                role="presentation"
+                style={{
+                  margin: "0.5rem auto",
+                  marginBottom: "0.45rem",
+                }}
+              >
+                <tr>
+                  <td style={{ textAlign: "center" }}>
+                    <Img
+                      src="https://d2cfeg6k9cklz9.cloudfront.net/mail-template-icons/adgiest-logo.png"
+                      alt="Adgeist"
+                      width={80}
+                      height={22}
+                      style={logoImg}
+                    />
+                  </td>
+                </tr>
+              </table>
+            </Section>
+          </Section>
+
+          <Section style={{ width: "100%" }}>
+            <hr style={dashedLine}></hr>
+          </Section>
+
+          <Section style={box1}>
+            <Section style={box2}>
+              <Img
+                src="https://d2cfeg6k9cklz9.cloudfront.net/mail-template-icons/invitation.png"
+                alt="invitation"
+                width="125"
+                height="125"
+                style={img1}
+              />
+              <Section style={box3}>
+                <div style={{ ...content1, marginBottom: "10px" }}>
+                  Hi <span style={{ fontWeight: "bolder" }}>{firstName}</span>,
+                </div>
+                <div style={{ ...content1, marginBottom: "10px" }}>
+                   Welcome aboard — you've been successfully added as the <span style={{ fontWeight: "bolder" }}>Company Owner</span> for <span style={{ fontWeight: "bolder" }}>{companyName}</span> on AdGeist. 
+                </div>
+                <div style={{ ...content1, marginBottom: "10px" }}>
+                  As the owner, you now have full control over your company setup, platform access, and team management.
+                </div>
+                <div style={{ marginBottom: "6px" }}>
+                  <div style={{...content1, fontWeight: "bolder"}}>What you can do from here:</div>
+                  <li style={{...content1, paddingTop: 0}}>Invite teammates and assign their roles</li>
+                  <li style={content1}>Add & manage domains, ad spaces, and campaigns</li>
+                  <li style={content1}>Access billing, payouts, and usage reports</li>
+                </div>
+
+                <div style={{ marginBottom: "10px" }}>
+                  <a href={url} style={buttonStyle}>
+                    GO TO DASHBOARD
+                  </a>
+                </div>
+
+                <div style={{ fontSize: "0.93rem", lineHeight: "1.35rem", color: "#000", fontWeight: "normal", marginBottom: "10px" }}>
+                  If you weren't expecting this access, or need support, please contact your platform admin.
+                </div>
+              </Section>
+            </Section>
+          </Section>
+
+          <div style={{marginBottom: "1rem"}}>
+            <div>
+              <div style={{ ...footerText1, fontWeight: "bold" }}>
+                Need help? Reach out to us at
+              </div>
+              <div style={{ ...footerText1, fontWeight: "bolder" }}>
+                mugesh@thealteroffice.com
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Body>
+    </Html>
+  );
+};
+
+export default OwnerWelcome;
+
+const body: React.CSSProperties = {
+  fontFamily: `'Lucida Console', 'Courier New', monospace`,
+  padding: "1rem",
+  width: "100%",
+  margin: "0 0 0 0",
+  boxSizing: "border-box",
+  overflowX: "hidden",
+  letterSpacing: "-0.05rem"
+};
+
+const container: React.CSSProperties = {
+  maxWidth: "530px",
+  border: "1px solid #B1B1B1",
+  backgroundColor:"#d1cdc7",
+};
+
+const logoImg: React.CSSProperties = {
+  height: "1.875rem",
+  width: "6.25rem",
+};
+
+const dashedLine: React.CSSProperties = {
+  borderTop: "1px dashed #7d7b77",
+  width: "100%",
+  margin: "0 0 0.7rem 0",
+  padding: "0 0 0 0",
+  display: "inline-block",
+};
+
+const advertiserBox: React.CSSProperties = {
+  border: "1px solid #000000",
+  backgroundColor: "#D9D9D9",
+  height: "1.75rem",
+  padding: "0 0.2125rem",
+  lineHeight: "1.75rem",
+  fontWeight: 700,
+  fontSize: "1rem",
+  color: "#000",
+  marginTop: "-0.125rem",
+};
+
+const box1: React.CSSProperties = {
+  border: "1px solid #B1B1B1",
+  borderRadius: "10px",
+  backgroundColor: "#DDDAD6",
+  width: "95%",
+  justifyContent: "center",
+  alignSelf: "center",
+  margin: "0 auto 1.2rem auto",
+  padding: "0.32rem",
+  boxSizing: "border-box",
+  boxShadow: "0px 0px 4px 0px #A59681 inset"
+};
+
+const box2: React.CSSProperties = {
+  display: "grid",
+  gridTemplateRows: "auto 1fr",
+  gridTemplateColumns: "1fr",
+  border: "1px solid #B1B1B1",
+  borderRadius: "8px",
+};
+
+const box3: React.CSSProperties = {
+  padding: "0.6rem 0.9rem",
+};
+
+const content1: React.CSSProperties = {
+  fontSize: "0.96rem",
+  margin: 0,
+  lineHeight: "1.35rem",
+  color: "#000",
+  fontWeight: "normal",
+};
+
+const img1: React.CSSProperties = {
+  width: "130px",
+  height: "130px",
+  display: "block",
+  margin: "0 auto",
+};
+
+const buttonStyle: React.CSSProperties = {
+  backgroundColor: "#000000",
+  width: "180px",
+  marginTop: "6px",
+  height: "28px",
+  color: "#FFFFFF",
+  fontWeight: 700,
+  fontSize: "0.85rem",
+  letterSpacing: "0.025em",
+  textTransform: "uppercase",
+  textAlign: "center",
+  alignItems: "center",
+  display: "inline-block",
+  lineHeight: "28px",
+  textDecoration: "none",
+  borderRadius: "6px",
+};
+
+const footerText1: React.CSSProperties = {
+  fontSize: "0.75rem",
+  marginBottom: "5px",
+  color: "#000",
+  textAlign: "center",
+  letterSpacing: "0.009rem"
+};
+
+const footerText2: React.CSSProperties = {
+  fontWeight: 700,
+  fontSize: "0.65rem",
+  color: "#000",
+  marginBottom: "5px",
+  textAlign: "center",
+  opacity: "50%",
+  letterSpacing: "0.003rem"
+};
