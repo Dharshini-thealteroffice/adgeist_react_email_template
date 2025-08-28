@@ -8,9 +8,8 @@ import {
 } from "@react-email/components";
 
 export const CompaignApproved = ({
-  role = "Advertiser",
-  firstName = "Advernametiser",
-  companyName = "campaignName", 
+  firstName = "name",
+  companyName = "companyxyz", 
   url = "fnkjenfkne",
 }) => {
   return (
@@ -53,20 +52,19 @@ export const CompaignApproved = ({
                   Hi <span style={{ fontWeight: "bolder" }}>{firstName}</span>,
                 </div>
                 <div style={{ ...content1, marginBottom: "12px" }}>
-                    Your company <span style={{ fontWeight: "bolder" }}>{companyName}</span> {" "} is verified and ready to use.
-                </div>
-                <div style={{ ...content1, marginBottom: "12px" }}>
-                 You now have full access to start using the platform as a Super Owner.
+                    Your company <span style={{ fontWeight: "bolder" }}>{companyName}</span> {" "} has been successfully verified on AdGeist. You now have full access to start using the platform as a Super Owner.
                 </div>
                 <div style={{ marginBottom: "10px" }}>
                   <div style={{...content1, fontWeight: "bolder", marginBottom: 0}}>You can now:</div>
                   <li style={{...content1, marginTop: 0}}>Add your team and assign platform roles</li>
+                  <li style={{...content1, marginTop: 0}}>Add & manage domains, ad spaces, (If Publisher)</li>
+                  <li style={{...content1, marginTop: 0}}>Add & manage domains, ad spaces, and campaigns (if Advertiser)</li>
                   <li style={{...content1, marginTop: 0, marginBottom: 0}}>Access billing, analytics, and payout features</li>
                 </div>
 
                 <div style={{ marginBottom: "10px" }}>
                   <a href={url} style={buttonStyle}>
-                   VIEW CAMPAIGN
+                   GO TO DASHBOARD
                   </a>
                 </div>
               </Section>
@@ -80,14 +78,6 @@ export const CompaignApproved = ({
               </div>
               <div style={{ ...footerText1, fontWeight: "bolder" }}>
                 mugesh@thealteroffice.com
-              </div>
-            </div>
-            <div style={{ marginTop: "18px" }}>
-              <div style={footerText2}>
-                AdGeist by ITW Global and The Alter Office
-              </div>
-              <div style={footerText2}>
-                &copy; 2025 The Alter Office. All rights reserved.
               </div>
             </div>
           </div>
@@ -110,7 +100,7 @@ const body: React.CSSProperties = {
 };
 
 const container: React.CSSProperties = {
-  maxWidth: "500px",
+  maxWidth: "475px",
   border: "1px solid #B1B1B1",
   backgroundColor:"#d1cdc7",
 };

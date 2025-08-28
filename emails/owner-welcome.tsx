@@ -22,22 +22,19 @@ export const OwnerWelcome = ({
               <table
                 role="presentation"
                 style={{
-                  margin: "1rem auto",
-                  marginBottom: "0.75rem",
+                  margin: "0.5rem auto",
+                  marginBottom: "0.45rem",
                 }}
               >
                 <tr>
-                  <td style={{ textAlign: "center", paddingRight: "0.1rem" }}>
+                  <td style={{ textAlign: "center" }}>
                     <Img
                       src="https://d2cfeg6k9cklz9.cloudfront.net/mail-template-icons/adgiest-logo.png"
                       alt="Adgeist"
-                      width={100}
-                      height={30}
+                      width={80}
+                      height={22}
                       style={logoImg}
                     />
-                  </td>
-                  <td style={{ textAlign: "center" }}>
-                    <div style={advertiserBox}>Publisher</div>
                   </td>
                 </tr>
               </table>
@@ -53,18 +50,18 @@ export const OwnerWelcome = ({
               <Img
                 src="https://d2cfeg6k9cklz9.cloudfront.net/mail-template-icons/invitation.png"
                 alt="invitation"
-                width="145"
-                height="145"
+                width="125"
+                height="125"
                 style={img1}
               />
               <Section style={box3}>
-                <div style={{ ...content1, marginBottom: "12px" }}>
+                <div style={{ ...content1, marginBottom: "10px" }}>
                   Hi <span style={{ fontWeight: "bolder" }}>{firstName}</span>,
                 </div>
-                <div style={{ ...content1, marginBottom: "12px" }}>
+                <div style={{ ...content1, marginBottom: "10px" }}>
                    Welcome aboard — you've been successfully added as the <span style={{ fontWeight: "bolder" }}>Company Owner</span> for <span style={{ fontWeight: "bolder" }}>{companyName}</span> on AdGeist. 
                 </div>
-                <div style={{ ...content1, marginBottom: "12px" }}>
+                <div style={{ ...content1, marginBottom: "10px" }}>
                   As the owner, you now have full control over your company setup, platform access, and team management.
                 </div>
                 <div style={{ marginBottom: "6px" }}>
@@ -74,13 +71,13 @@ export const OwnerWelcome = ({
                   <li style={content1}>Access billing, payouts, and usage reports</li>
                 </div>
 
-                <div style={{ marginBottom: "12px" }}>
+                <div style={{ marginBottom: "10px" }}>
                   <a href={url} style={buttonStyle}>
-                    GO TO COMPANY DASHBOARD
+                    GO TO DASHBOARD
                   </a>
                 </div>
 
-                <div style={{ ...content1, marginBottom: "10px" }}>
+                <div style={{ fontSize: "0.93rem", lineHeight: "1.35rem", color: "#000", fontWeight: "normal", marginBottom: "10px" }}>
                   If you weren't expecting this access, or need support, please contact your platform admin.
                 </div>
               </Section>
@@ -94,14 +91,6 @@ export const OwnerWelcome = ({
               </div>
               <div style={{ ...footerText1, fontWeight: "bolder" }}>
                 mugesh@thealteroffice.com
-              </div>
-            </div>
-            <div style={{ marginTop: "12px" }}>
-              <div style={footerText2}>
-                AdGeist by ITW Global and The Alter Office
-              </div>
-              <div style={footerText2}>
-                &copy; 2025 The Alter Office. All rights reserved.
               </div>
             </div>
           </div>
@@ -124,7 +113,7 @@ const body: React.CSSProperties = {
 };
 
 const container: React.CSSProperties = {
-  maxWidth: "520px",
+  maxWidth: "530px",
   border: "1px solid #B1B1B1",
   backgroundColor:"#d1cdc7",
 };
@@ -137,7 +126,7 @@ const logoImg: React.CSSProperties = {
 const dashedLine: React.CSSProperties = {
   borderTop: "1px dashed #7d7b77",
   width: "100%",
-  margin: "0 0 1rem 0",
+  margin: "0 0 0.7rem 0",
   padding: "0 0 0 0",
   display: "inline-block",
 };
@@ -182,23 +171,23 @@ const box3: React.CSSProperties = {
 const content1: React.CSSProperties = {
   fontSize: "0.96rem",
   margin: 0,
-  lineHeight: "1.4rem",
+  lineHeight: "1.35rem",
   color: "#000",
   fontWeight: "normal",
 };
 
 const img1: React.CSSProperties = {
-  width: "145px",
-  height: "145px",
+  width: "130px",
+  height: "130px",
   display: "block",
   margin: "0 auto",
 };
 
 const buttonStyle: React.CSSProperties = {
   backgroundColor: "#000000",
-  width: "225px",
+  width: "180px",
   marginTop: "6px",
-  height: "32px",
+  height: "28px",
   color: "#FFFFFF",
   fontWeight: 700,
   fontSize: "0.85rem",
@@ -207,7 +196,7 @@ const buttonStyle: React.CSSProperties = {
   textAlign: "center",
   alignItems: "center",
   display: "inline-block",
-  lineHeight: "32px",
+  lineHeight: "28px",
   textDecoration: "none",
   borderRadius: "6px",
 };
